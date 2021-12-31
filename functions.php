@@ -39,3 +39,10 @@
 
     do_action( 'custom_hook' );
     add_action( 'custom_hook', 'display_table' );
+
+    
+    function  custom_filter( $message ) {
+        return $message;
+    }
+    add_filter( 'hook_next', 'custom_filter' );
+ 
