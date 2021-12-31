@@ -1,5 +1,5 @@
-<h1>Custom Theme</h1>
 <?php
+ get_header();
  wp_head();
  if ( have_posts() ):
         while ( have_posts() ) : the_post();?>
