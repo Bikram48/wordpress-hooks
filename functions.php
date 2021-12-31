@@ -2,13 +2,17 @@
     function post_excerpt_length( $excerpt ) {
 
         if( has_excerpt() ){
-            $length = wp_trim_words( get_the_excerpt(), apply_filters( "excerpt_length",30 ));
+            $excerpt = wp_trim_words( get_the_excerpt(), apply_filters( 'my_theme_set_excerpt_length',30 ));
         }
 
-        return $length;
+        return $excerpt;
     }
 
     add_filter( 'the_excerpt', 'post_excerpt_length' );
+    add_filter( 'my_theme_set_excerpt_length', 'callback');
+    function callback() {
+        return 10;
+    }
 
     function meta_description() {
         echo '<meta name="description" content="This is the description">';
@@ -37,7 +41,6 @@
        </table>';
     }
 
-    do_action( 'custom_hook' );
     add_action( 'custom_hook', 'display_table' );
 
     
