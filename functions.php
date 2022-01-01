@@ -48,4 +48,16 @@
         return $message;
     }
     add_filter( 'hook_next', 'custom_filter' );
- 
+
+    add_filter ( 'display_gender_message', function( $gender ) {
+        $message = "";
+        if ( $gender == 'female' ) {
+            $message .= "User is female";
+        }
+
+        if( $gender == 'male' ) {
+            $message .= "User is male";
+        }
+        
+        return $message;
+    } );
