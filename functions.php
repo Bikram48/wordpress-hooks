@@ -64,7 +64,7 @@
 
     
     function change_dashboard_footer_text ( $text ){
-        return "Welcome to Bikram's dashboard";
+        return "Welcome to Bikram's dashboard!";
     }
 
     add_filter ( 'admin_footer_text',  'change_dashboard_footer_text');
